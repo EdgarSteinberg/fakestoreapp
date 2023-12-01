@@ -1,0 +1,12 @@
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     margin-top: 10px;
+}
+
+.count {
+    font-size: 1rem;
+    margin: 15px;
+    font-weight: bold;
+}

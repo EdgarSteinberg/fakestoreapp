@@ -1,0 +1,20 @@
+.nav {
+    justify-content: space-around;
+    background-color: rgb(30, 231, 30);
+    font-size: 25px;
+}
+
+@media screen and (max-width:700px){
+    .nav{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width:450px){
+    .nav{
+        display: flex;
+        justify-content: center;
+        align-items: center ;
+        flex-direction: column;
+    }
+}

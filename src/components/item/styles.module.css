@@ -1,0 +1,34 @@
+
+.card {
+    width: 300px; /* Ancho máximo para la tarjeta */
+    border-radius: 5px;
+    margin: 5px;
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Definición de tres filas: imagen, título, botón */
+    align-items: center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.521);
+    padding: 8px;
+}
+
+.img {
+    max-width: 40%; /* Ajusta el ancho máximo de la imagen al tamaño del contenedor */
+    height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
+    margin: 0 auto; /* Centra horizontalmente la imagen */
+     
+}
+
+.title {
+    width: 100%; /* Opción para ajustar el ancho del título a la tarjeta */
+    max-height: 3em; /* Altura máxima del título para evitar desbordamientos */
+    overflow: hidden; /* Para ocultar el texto que excede la altura máxima */
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.btn {
+    margin-top: 10px; /* Ajusta el margen superior del botón si es necesario */
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+
+}
