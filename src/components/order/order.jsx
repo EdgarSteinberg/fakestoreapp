@@ -3,6 +3,7 @@ import { CartContext } from '../../context/cartContext';
 import OrderItem from '../orderItem/orderItem';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import styles from './styles.module.css'
 
 const Order = () => {
     const { cart, clearCart } = useContext(CartContext);
@@ -33,25 +34,25 @@ const Order = () => {
 
     return (
         <>
-                    <OrderItem onConfirm={crearOrder} />
+            <OrderItem onConfirm={crearOrder} />
             {!loading && orderId && (
-                <div>
+                <div className='container'>
                     <p>Su Compra fue efectuada correctamente.</p>
                     <p>Conserve este numero de seguimiento:</p>
-                    <h2>Fecha: {orderId.date}</h2>
-                    <h2>Total: ${orderId.total}</h2>
-                    <h3>Productos:</h3>
+                    <p>Fecha: {orderId.date}</p>
+                    <p>Total: ${orderId.total}</p>
+                    <p>Productos:</p>
                     <ul>
                         {orderId.items.map((item, index) => (
                             <li key={index}>
                                 <p>Título: {item.title}</p>
-                                <img src={item.image} alt={item.title} />
+                                <img className={styles.img} src={item.image} alt={item.title} />
                             </li>
                         ))}
                     </ul>
-                    <Button variant="warning">
-                        <Link to={'/'}>Realizar una nueva compra</Link>
-                    </Button>
+                   
+                        <Link to={'/'}> <Button variant="warning">Realizar una nueva compra</Button></Link>
+                    
                 </div>
             )}
             

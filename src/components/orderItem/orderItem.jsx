@@ -6,6 +6,7 @@ const OrderItem = ({onConfirm}) => {
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
     const [email, setEmail] = useState('')
+    const [showForm, setShowForm] = useState(true);
 
     const handleConfirm = (event) => {
         event.preventDefault()
@@ -14,13 +15,14 @@ const OrderItem = ({onConfirm}) => {
             name,phone,email
         }
         onConfirm(UserData)
-
+        setShowForm(false)
     }
 
     return (
         <>
 
-            <Form onSubmit={handleConfirm}>
+            {showForm && (
+                 <Form onSubmit={handleConfirm} className='container'>
                     <Form.Group className="mb-3">
                         <Form.Label htmlFor="disabledTextInput">Nombre y Apellido</Form.Label>
                         <Form.Control
@@ -52,6 +54,7 @@ const OrderItem = ({onConfirm}) => {
                     </Form.Group>
                     <Button type="submit">Crear orden</Button>    
             </Form>
+            )}
 
         </>
     )
